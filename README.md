@@ -1,4 +1,4 @@
-# glas Evaluation
+# GlaS Evaluation
 
 The source code for the evaluation container for
 glas, generated with
