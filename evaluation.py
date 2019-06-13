@@ -15,7 +15,7 @@ class Glas(ClassificationEvaluation):
         super().__init__(
             file_loader=ImageIOLoader(),
             validators=(
-                NumberOfCasesValidator(num_cases=40),
+                NumberOfCasesValidator(num_cases=4),
                 UniquePathIndicesValidator(),
                 UniqueImagesValidator(),
             ),
