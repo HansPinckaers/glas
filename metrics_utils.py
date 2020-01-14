@@ -94,13 +94,13 @@ def get_tp_fp_fn(pred, true):
     
     return tp, fp, fn
 
-def get_dice_info(pred, true):
+def get_dice_info(pred, true, total_S, total_G):
 
     d_temp1 = 0
     d_temp2 = 0
 
-    gamma = 1  #TODO this needs to be changed to give the appropriate weighting
-    sigma = 1  #TODO this needs to be changed to give the appropriate weighting
+    gamma = true.sum() / total_G
+    sigma = pred.sum() / total_S
 
     true = np.copy(true) # get copy of GT
     pred = np.copy(pred) # get copy of prediction
@@ -183,13 +183,13 @@ def get_dice_info(pred, true):
     return d_temp1, d_temp2
 
 
-def get_haus_info(pred, true):
+def get_haus_info(pred, true, total_S, total_G):
 
     h_temp1 = 0
     h_temp2 = 0
 
-    gamma = 1  #TODO this needs to be changed to give the appropriate weighting
-    sigma = 1  #TODO this needs to be changed to give the appropriate weighting
+    gamma = true.sum() / total_G
+    sigma = pred.sum() / total_S
 
     true = np.copy(true) # get copy of GT
     pred = np.copy(pred) # get copy of prediction
